@@ -53,7 +53,7 @@
  
 
 
-    {{-- <div class="py-12">
+    <div class="py-12">
         <div class="container mx-auto pt-10 pb-10 ">
     
     
@@ -169,7 +169,7 @@
                 
             
             </div>
-    </div> --}}
+    </div>
 
     @include('layouts.footer')
 </x-app-layout>

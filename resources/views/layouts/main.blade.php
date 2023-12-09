@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -5,15 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>FILMOLOGI</title>
+
   @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body>
 
-  @include('partials.navbar')
-  
-  @yield('content')
+ 
 
+@include('layouts.navigation')
+
+@yield('content')
+
+
+
+@include('layouts.footer')
+
+
+<script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </body>
 </html>
 
-@include('partials.footer')
+
+ 

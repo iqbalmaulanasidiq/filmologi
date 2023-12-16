@@ -163,5 +163,8 @@
     </div>
     
 </div>
+
+<hr class=" border-gray-200 s dark:border-gray-700 " />
+
  @endsection
 

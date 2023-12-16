@@ -37,7 +37,7 @@
             </div>
             <div class="ps-10">
                 <p>FILMOLOGI didirikan dengan hasrat untuk menghadirkan kegembiraan melalui dunia sinema. Kami percaya bahwa setiap orang memiliki cerita yang unik dan bahwa dunia film dan TV adalah tempat di mana kita dapat menemukan inspirasi, hiburan, dan kadang-kadang bahkan penemuan yang tak terduga. <br><br>
-                Mari bersama-sama menjelajahi dunia hiburan melalui FILMOLOGI dan temukan pengalaman menonton yang sesuai dengan kepribadian Anda!</p>
+                Mari bersama-sama menjelajahi dunia hiburan melalui FILMOLOGI dan temukan pengalaman menonton yang sesuai dengan kepribadian Anda! testing</p>
             </div>
         </div>
 

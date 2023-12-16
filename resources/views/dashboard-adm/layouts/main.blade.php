@@ -12,12 +12,12 @@
 </head>
 <body>
   <div class="flex">
-    @include('admin.layouts.navbar')
+    @include('dashboard-adm.layouts.navbar')
 
 
-    @include('admin.layouts.header') 
+    @include('dashboard-adm.layouts.header') 
 
-    @include('admin.layouts.sidebar')
+    @include('dashboard-adm.layouts.sidebar')
 
     <div class="flex-1">
       @yield('content')
@@ -25,7 +25,7 @@
   </div>
 
 
-@include('admin.layouts.footer')
+@include('dashboard-adm.layouts.footer')
 
 
 <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>

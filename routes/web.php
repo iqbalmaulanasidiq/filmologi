@@ -49,5 +49,5 @@ require __DIR__.'/auth.php';
 
 // DASHBOARD ADMIN
 Route::get('/dashboard-adm', function () {
-    return view('dashboard-adm');
+    return view('dashboard-adm.index');
 })->middleware(['auth', 'verified'])->name('admin');

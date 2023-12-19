@@ -37,121 +37,117 @@
           <p class="text-lg font-medium text-gray-500 dark:text-gray-400">Users</p>
        </div>
 
-       <div class="grid grid-cols-2 gap-4 mb-4">
-         </div>
-         
+        <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+                <li class="me-2">
+                    <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Users</button>
+                </li>
+            </ul>
+            <div id="defaultTabContent">
+                <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+                    <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Tabel Users</h2>      
+                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">
+                                            Foto Profil
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Nama
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Username
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Email
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <img class="w-20 h-20 rounded-full" src="/storage/v.jpg" alt="foto pinaa">
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            Vina Nur Fauziah
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            vinanurfauziah
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            vina@gmail.com
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <img class="w-20 h-20 rounded-full" src="/storage/e.jpeg" alt="foto emil">
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            Emilia Faradila
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            emiliafaradila
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            emil@gmail.com
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="bg-white dark:bg-gray-800">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <img class="w-20 h-20 rounded-full" src="/storage/i.jpeg" alt="foto iqbal">
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            Iqbal Maulana
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            iqbalmaulana
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            iqbal@gmail.com
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="bg-white dark:bg-gray-800">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            <img class="w-20 h-20 rounded-full" src="/storage/y.jpeg" alt="foto yudha">
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            Yudha Yudhistira
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            yudhayudhistira
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            yudha@gmail.com
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-<div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-        <li class="me-2">
-            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Users</button>
-        </li>
-    </ul>
-    <div id="defaultTabContent">
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-            <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Tabel Users</h2>      
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    Foto Profil
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Nama
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Username
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Email
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded-full" src="/storage/v.jpg" alt="foto pinaa">
-                                </th>
-                                <td class="px-6 py-4">
-                                    Vina Nur Fauziah
-                                </td>
-                                <td class="px-6 py-4">
-                                    vinanurfauziah
-                                </td>
-                                <td class="px-6 py-4">
-                                    vina@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded-full" src="/storage/e.jpeg" alt="foto emil">
-                                </th>
-                                <td class="px-6 py-4">
-                                    Emilia Faradila
-                                </td>
-                                <td class="px-6 py-4">
-                                    emiliafaradila
-                                </td>
-                                <td class="px-6 py-4">
-                                    emil@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white dark:bg-gray-800">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded-full" src="/storage/i.jpeg" alt="foto iqbal">
-                                </th>
-                                <td class="px-6 py-4">
-                                    Iqbal Maulana
-                                </td>
-                                <td class="px-6 py-4">
-                                    iqbalmaulana
-                                </td>
-                                <td class="px-6 py-4">
-                                    iqbal@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
-                            <tr class="bg-white dark:bg-gray-800">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded-full" src="/storage/y.jpeg" alt="foto yudha">
-                                </th>
-                                <td class="px-6 py-4">
-                                    Yudha Yudhistira
-                                </td>
-                                <td class="px-6 py-4">
-                                    yudhayudhistira
-                                </td>
-                                <td class="px-6 py-4">
-                                    yudha@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
+                </div>
+                <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
+                    
                 </div>
 
-            
+            </div>
         </div>
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
-            
-        </div>
-
-    </div>
-</div>
 
 
          <div class="flex items-center justify-center h-20 rounded bg-white-50 dark:bg-white-800">           

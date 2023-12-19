@@ -74,7 +74,7 @@
                         <tbody>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded" src="/storage/v.jpg" alt="foto pinaa">
+                                    <img class="w-20 h-20 rounded-full" src="/storage/v.jpg" alt="foto pinaa">
                                 </th>
                                 <td class="px-6 py-4">
                                     Vina Nur Fauziah
@@ -91,7 +91,7 @@
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded" src="/storage/e.jpeg" alt="foto emil">
+                                    <img class="w-20 h-20 rounded-full" src="/storage/e.jpeg" alt="foto emil">
                                 </th>
                                 <td class="px-6 py-4">
                                     Emilia Faradila
@@ -108,7 +108,7 @@
                             </tr>
                             <tr class="bg-white dark:bg-gray-800">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded" src="/storage/i.jpeg" alt="foto iqbal">
+                                    <img class="w-20 h-20 rounded-full" src="/storage/i.jpeg" alt="foto iqbal">
                                 </th>
                                 <td class="px-6 py-4">
                                     Iqbal Maulana
@@ -125,7 +125,7 @@
                             </tr>
                             <tr class="bg-white dark:bg-gray-800">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-20 h-20 rounded" src="/storage/y.jpeg" alt="foto yudha">
+                                    <img class="w-20 h-20 rounded-full" src="/storage/y.jpeg" alt="foto yudha">
                                 </th>
                                 <td class="px-6 py-4">
                                     Yudha Yudhistira

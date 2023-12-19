@@ -51,3 +51,11 @@ require __DIR__.'/auth.php';
 Route::get('/dashboard-adm', function () {
     return view('dashboard-adm.index');
 })->middleware(['auth', 'verified'])->name('admin');
+
+Route::get('/dashboard-adm/users/index', function () {
+    return view('dashboard-adm.users.index');
+})->middleware(['auth', 'verified'])->name('dashboard-adm.users.index');
+
+Route::get('/dashboard-adm/role/index', function () {
+    return view('dashboard-adm.role.index');
+})->middleware(['auth', 'verified'])->name('dashboard-adm.role.index');

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="p-10 sm:ml-64">
-    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+    <div class="p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700 mt-20">
        <div class="grid grid-cols-3 gap-4 mb-4">
 
         {{-- BREADCRUMB --}}
@@ -14,7 +14,7 @@
                 <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
                 </svg>
-                Home
+                Dashboard Admin
                 </a>
             </li>
             <li aria-current="page">
@@ -39,115 +39,127 @@
 
        <div class="grid grid-cols-2 gap-4 mb-4">
          </div>
-         <div class="flex items-center justify-center h-48 mb-4 rounded ">
-         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-               <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                     <tr>
-                        <th scope="col" class="px-6 py-3">
-                           Product name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           Color
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           Category
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           Price
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           Action
-                        </th>
-                     </tr>
-               </thead>
-               <tbody>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Apple MacBook Pro 17"
-                        </th>
-                        <td class="px-6 py-4">
-                           Silver
-                        </td>
-                        <td class="px-6 py-4">
-                           Laptop
-                        </td>
-                        <td class="px-6 py-4">
-                           $2999
-                        </td>
-                        <td class="px-6 py-4">
-                           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Microsoft Surface Pro
-                        </th>
-                        <td class="px-6 py-4">
-                           White
-                        </td>
-                        <td class="px-6 py-4">
-                           Laptop PC
-                        </td>
-                        <td class="px-6 py-4">
-                           $1999
-                        </td>
-                        <td class="px-6 py-4">
-                           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                     </tr>
-                     <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                           Black
-                        </td>
-                        <td class="px-6 py-4">
-                           Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                           $99
-                        </td>
-                        <td class="px-6 py-4">
-                           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                     </tr>
-               </tbody>
-            </table>
-         </div>
+         
 
-         </div>
-         <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                  </svg>
-               </p>
-            </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                  </svg>
-               </p>
-            </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                  </svg>
-               </p>
-            </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-                  </svg>
-               </p>
-            </div>
-         </div>
+<div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+        <li class="me-2">
+            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Users</button>
+        </li>
+    </ul>
+    <div id="defaultTabContent">
+        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+            <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Tabel Users</h2>      
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Foto Profil
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Nama
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Username
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Email
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <img class="w-20 h-20 rounded" src="/storage/v.jpg" alt="foto pinaa">
+                                </th>
+                                <td class="px-6 py-4">
+                                    Vina Nur Fauziah
+                                </td>
+                                <td class="px-6 py-4">
+                                    vinanurfauziah
+                                </td>
+                                <td class="px-6 py-4">
+                                    vina@gmail.com
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <img class="w-20 h-20 rounded" src="/storage/e.jpeg" alt="foto emil">
+                                </th>
+                                <td class="px-6 py-4">
+                                    Emilia Faradila
+                                </td>
+                                <td class="px-6 py-4">
+                                    emiliafaradila
+                                </td>
+                                <td class="px-6 py-4">
+                                    emil@gmail.com
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <img class="w-20 h-20 rounded" src="/storage/i.jpeg" alt="foto iqbal">
+                                </th>
+                                <td class="px-6 py-4">
+                                    Iqbal Maulana
+                                </td>
+                                <td class="px-6 py-4">
+                                    iqbalmaulana
+                                </td>
+                                <td class="px-6 py-4">
+                                    iqbal@gmail.com
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <img class="w-20 h-20 rounded" src="/storage/y.jpeg" alt="foto yudha">
+                                </th>
+                                <td class="px-6 py-4">
+                                    Yudha Yudhistira
+                                </td>
+                                <td class="px-6 py-4">
+                                    yudhayudhistira
+                                </td>
+                                <td class="px-6 py-4">
+                                    yudha@gmail.com
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            
+        </div>
+        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
+            
+        </div>
+
+    </div>
+</div>
+
+
+         <div class="flex items-center justify-center h-20 rounded bg-white-50 dark:bg-white-800">           
+        </div>
+
+        <div class="flex items-center justify-center h-20 rounded bg-white-50 dark:bg-white-800">           
+        </div>
+         
       </div>
  </div>
 

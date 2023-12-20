@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -12,22 +11,23 @@
   @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body>
-
- 
-
-@include('layouts.navigation')
-
-@yield('content')
+  <div class="flex">
+    @include('dashboard-adm.layouts.navbar')
 
 
+    @include('dashboard-adm.layouts.header') 
 
-@include('layouts.footer')
+    @include('dashboard-adm.layouts.sidebar')
 
+    <div class="flex-1">
+      @yield('content')
+    </div>
+  </div>
+
+
+@include('dashboard-adm.layouts.footer')
 
 <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
+<script src="/resources/js/datepicker.js"></script>
 </body>
 </html>
-
-
- 

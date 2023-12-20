@@ -167,40 +167,14 @@
                     <div class="overflow-hidden rounded-[32px]">
                         <img class="w-full h-[300px] rounded-[32px] group-hover:scale-125 duration-200" src="https://media.sukabumiupdate.com/media/2023/01/04/1672821835_63b53c4bc1823_VqEPLbgVWbEVN2zL24kf.jpg"/>
                     </div>
-
-                    <span class="font-inter font-bold text-xl mt-4 line-clamp-1 group-hover:line-clamp-none">Title</span>
-                    <span class="font-inter text-sm mt-1">2023</span>
                 </div>
-            </a>
-        </div>
-
-        <div class="w-full sm:w-auto">
-            <a href="tv-shows/id" class="group block">
-                <div class="min-w-[232px] min-h-[428px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[32px] p-5 flex flex-col duration-100">
-                    <div class="overflow-hidden rounded-[32px]">
-                        <img class="w-full h-[300px] rounded-[32px] group-hover:scale-125 duration-200" src="https://media.sukabumiupdate.com/media/2023/01/04/1672821835_63b53c4bc1823_VqEPLbgVWbEVN2zL24kf.jpg"/>
-                    </div>
-
-                    <span class="font-inter font-bold text-xl mt-4 line-clamp-1 group-hover:line-clamp-none">Title</span>
-                    <span class="font-inter text-sm mt-1">2023</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="w-full sm:w-auto">
-            <a href="tv-shows/id" class="group block">
-                <div class="min-w-[232px] min-h-[428px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[32px] p-5 flex flex-col duration-100">
-                    <div class="overflow-hidden rounded-[32px]">
-                        <img class="w-full h-[300px] rounded-[32px] group-hover:scale-125 duration-200" src="https://media.sukabumiupdate.com/media/2023/01/04/1672821835_63b53c4bc1823_VqEPLbgVWbEVN2zL24kf.jpg"/>
-                    </div>
-
-                    <span class="font-inter font-bold text-xl mt-4 line-clamp-1 group-hover:line-clamp-none">Title</span>
-                    <span class="font-inter text-sm mt-1">2023</span>
-                </div>
-            </a>
-        </div>
+                
+            </div>
+            
+                
+            
+            </div>
     </div>
-</div>
 
 <hr class=" border-gray-200 s dark:border-gray-700 " />
     @include('layouts.footer')

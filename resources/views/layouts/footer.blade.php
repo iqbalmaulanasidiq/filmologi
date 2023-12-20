@@ -4,7 +4,7 @@
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" class="flex items-center">
+              <a href="/storage/logo.png" class="flex items-center">
                   
                   <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><img src="{{ asset('storage/img/logo.png') }}" alt="logo" width="200"></span>
               </a>

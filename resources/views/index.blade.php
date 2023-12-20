@@ -18,10 +18,10 @@
         <img src="{{ asset('/storage/logo.png') }}" alt="logo" width="300" class="mx-auto ">
         <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Mari bergabung bersama kami dan nikmati fitur fitur menariknya !!.</p>
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-            <a href="/login" class="inline-flex  justify-center items-center py-3 px-5 me-10 text-base font-medium text-center text-white rounded-full  bg-opacity-10 border border-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+            <a href="/login" class="inline-flex  justify-center items-center py-3 px-5 me-10 text-base font-medium text-center text-white rounded-full  bg-opacity-10 border border-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 ms-7">
                 Masuk
             </a>
-            <a href="/register" class="inline-flex  justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-full  bg-opacity-10 border border-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 ms-4">
+            <a href="/register" class="inline-flex  justify-center items-center py-3 px-5 me-10 text-base font-medium text-center text-white rounded-full  bg-opacity-10 border border-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 ms-7">
                 Daftar
             </a>
         </div>

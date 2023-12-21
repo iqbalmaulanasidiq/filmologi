@@ -44,10 +44,10 @@
 
          {{-- LATEST USERS --}}
             <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
-               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-indigo-950 dark:border-gray-700">
                   
 
-            <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-indigo-950 dark:border-gray-700">
                <div class="flex items-center justify-between mb-4">
                   <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Users</h5>
                   <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
@@ -82,7 +82,7 @@
             {{-- Outline image attachment  --}}
                </figcaption>    
                </figure>
-               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg dark:bg-indigo-950 dark:border-gray-700">
                   
                <div class="flex items-start gap-2.5">
                   <img class="w-8 h-8 rounded-full" src="/storage/v.jpg" alt="Poto pinaa">
@@ -91,7 +91,7 @@
                         <span class="text-sm font-semibold text-gray-900 dark:text-white">Vina Nur Fauziah</span>
                         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
                      </div>
-                     <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                     <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-indigo-950">
                      <p class="text-sm font-normal text-gray-900 dark:text-white">I'm working from home today! 😅</p>
                      <div class="group relative my-2.5">
                            <div class="absolute w-full h-full bg-gray-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
@@ -138,7 +138,7 @@
 
                   </figcaption>    
                </figure>
-               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
+               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-indigo-950 dark:border-gray-700">
                   <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
                      <p class="my-4">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
@@ -151,7 +151,9 @@
                      </div>
                   </figcaption>    
                </figure>
-               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-b-lg md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+
+
+               <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-b-lg md:rounded-se-lg dark:bg-indigo-950 dark:border-gray-700">
                   
                   {{-- datepicker --}}
                   <div class="relative max-w-sm">
@@ -160,7 +162,7 @@
                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                         </svg>
                      </div>
-                     <input datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                     <input datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-indigo-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
                   </div>
  
   

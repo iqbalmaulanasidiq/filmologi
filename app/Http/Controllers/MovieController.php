@@ -12,32 +12,30 @@ class MovieController extends Controller
         $baseURL = env('MOVIE_DB_BASE_URL');
         $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
         $apiKey = env('MOVIE_DB_API_KEY');
-        // Hit API banner
-        $bannerResponse = Http::get($baseURL . 'trending/movie/week?api_key=' ,[ 'api_key' => $apiKey]);
-        // Prepare variable
-        $bannerArray = [];
 
-        // Check if the response is successful and content is not null
-        if ($bannerResponse->successful() && !is_null($bannerResponse->object())) {
-            $resultArray = $bannerResponse->object()->results;
+        // Hit API untuk mendapatkan film yang sedang tren (trending)
+        $bannerResponse = Http::get($baseURL . '/trending/movie/week?api_key=' . $apiKey)->json()['results'];
 
-            // Check if 'results' property exists and is not null
-            if (isset($resultArray) && !is_null($resultArray)) {
-                foreach ($resultArray as $item) {
-                    array_push($bannerArray, $item);
+        // Persiapkan variabel untuk banner film
+        $bannerHome = [];
 
-                    if (count($bannerArray) == 1) {
-                        break;
-                    }
+        // Periksa respons API
+        if ($bannerResponse) {
+            // Looping data dari respons API
+            foreach ($bannerResponse as $key => $value) {
+                // Periksa jika poster path tidak null dan poster berorientasi lanskap
+                if ($value['poster_path'] != null && $value['backdrop_path'] != null) {
+                    // Tambahkan data ke array
+                    array_push($bannerHome, $value);
                 }
             }
         }
 
         return view('index', [
-            'baseURL' => $baseURL,
-            'imageBaseURL' => $imageBaseURL,
+            'baseUrl' => $baseURL,
+            'imageBaseUrl' => $imageBaseURL,
             'apiKey' => $apiKey,
-            'banner' => $bannerArray,
+            'bannerHome' => $bannerHome,
         ]);
     }
 }

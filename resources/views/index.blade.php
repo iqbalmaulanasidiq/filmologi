@@ -12,8 +12,11 @@
 </head>
 <body>
 
+@php
+    $bannerImage = "{$imageBaseUrl}/original{$bannerHome[0]['backdrop_path']}";
+@endphp
 
-<section class="bg-center h-[1200px] bg-no-repeat bg-local bg-[url('https://images.unsplash.com/photo-1505954137021-b6bf5a131a7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-gray-700 bg-blend-multiply">
+   <section class="bg-center min-h-[1500px] w-full bg-no-repeat bg-local bg-[url('{{ $bannerImage }}')] bg-gray-700 bg-blend-multiply" >  
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
         <img src="{{ asset('/storage/logo.png') }}" alt="logo" width="300" class="mx-auto ">
         <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Mari bergabung bersama kami dan nikmati fitur fitur menariknya !!.</p>
@@ -60,6 +63,11 @@
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Selamat datang di FILMOLOGI, platform yang didedikasikan untuk membawa pengalaman sinematik terbaik langsung ke hadapan Anda! Kami adalah penyedia rekomendasi film dan acara televisi yang memahami keunikan setiap pengguna. FILMOLOGI bertujuan untuk memberikan pilihan film dan acara TV yang menarik untuk anda.</p>
                 
             </div>
+
+            <div class="ps-10">
+                <p>FILMOLOGI didirikan dengan hasrat untuk menghadirkan kegembiraan melalui dunia sinema. Kami percaya bahwa setiap orang memiliki cerita yang unik dan bahwa dunia film dan TV adalah tempat di mana kita dapat menemukan inspirasi, hiburan, dan kadang-kadang bahkan penemuan yang tak terduga. <br><br>
+                Mari bersama-sama menjelajahi dunia hiburan melalui FILMOLOGI dan temukan pengalaman menonton yang sesuai dengan kepribadian Anda! testing</p>
+
             <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
                 <a href="#" class="bg-purple-100 text-purple-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -71,6 +79,7 @@
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">FILMOLOGI didirikan dengan hasrat untuk menghadirkan kegembiraan melalui dunia sinema. Kami percaya bahwa setiap orang memiliki cerita yang unik dan bahwa dunia film dan TV adalah tempat di mana kita dapat menemukan inspirasi, hiburan, dan kadang-kadang bahkan penemuan yang tak terduga. <br><br>
                     Mari bersama-sama menjelajahi dunia hiburan melalui FILMOLOGI dan temukan pengalaman menonton yang sesuai dengan kepribadian Anda!</p>
                 
+
             </div>
         </div>
     </div>

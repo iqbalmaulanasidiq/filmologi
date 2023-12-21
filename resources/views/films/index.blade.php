@@ -29,8 +29,9 @@
 </div>
 
 
-<div class="container mx-auto pb-12">
-    <div class="mt-5 py-10">
+<div class="container mx-auto pb-12 ">
+    <div class="block  p-12 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+    <div class="mt-5 pb-10">
         <span class="ml-28 font-inter font-bold text-xl text-white">Top 20  Films</span>
     </div>
     <div class="grid grid-cols-5 gap-4">
@@ -157,6 +158,7 @@
         </div>
         <!-- Repeat the above block for each item -->
     </div>
+</div>
 </div>
 </div>
 

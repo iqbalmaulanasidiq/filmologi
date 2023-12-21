@@ -14,22 +14,12 @@
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
     </div>
     <!-- Slider indicators -->
     <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
         <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
     </div>
     <!-- Slider controls -->
     <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -167,9 +157,36 @@
                     <div class="overflow-hidden rounded-[32px]">
                         <img class="w-full h-[300px] rounded-[32px] group-hover:scale-125 duration-200" src="https://media.sukabumiupdate.com/media/2023/01/04/1672821835_63b53c4bc1823_VqEPLbgVWbEVN2zL24kf.jpg"/>
                     </div>
+
+                    <span class="font-inter font-bold text-xl mt-4 line-clamp-1 group-hover:line-clamp-none">Title</span>
+                    <span class="font-inter text-sm mt-1">2023</span>
                 </div>
-                
-            </div>
+            </a>
+        </div>
+        <div class="w-full sm:w-auto">
+            <a href="tv-shows/id" class="group block">
+                <div class="min-w-[232px] min-h-[428px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[32px] p-5 flex flex-col duration-100">
+                    <div class="overflow-hidden rounded-[32px]">
+                        <img class="w-full h-[300px] rounded-[32px] group-hover:scale-125 duration-200" src="https://media.sukabumiupdate.com/media/2023/01/04/1672821835_63b53c4bc1823_VqEPLbgVWbEVN2zL24kf.jpg"/>
+                    </div>
+
+                    <span class="font-inter font-bold text-xl mt-4 line-clamp-1 group-hover:line-clamp-none">Title</span>
+                    <span class="font-inter text-sm mt-1">2023</span>
+                </div>
+            </a>
+        </div>
+        <div class="w-full sm:w-auto">
+            <a href="tv-shows/id" class="group block">
+                <div class="min-w-[232px] min-h-[428px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[32px] p-5 flex flex-col duration-100">
+                    <div class="overflow-hidden rounded-[32px]">
+                        <img class="w-full h-[300px] rounded-[32px] group-hover:scale-125 duration-200" src="https://media.sukabumiupdate.com/media/2023/01/04/1672821835_63b53c4bc1823_VqEPLbgVWbEVN2zL24kf.jpg"/>
+                    </div>
+
+                    <span class="font-inter font-bold text-xl mt-4 line-clamp-1 group-hover:line-clamp-none">Title</span>
+                    <span class="font-inter text-sm mt-1">2023</span>
+                </div>
+            </a>
+        </div>
             
                 
             
@@ -177,5 +194,8 @@
     </div>
 
 <hr class=" border-gray-200 s dark:border-gray-700 " />
-    @include('layouts.footer')
+    
 </x-app-layout>
+
+
+@include('layouts.footer')

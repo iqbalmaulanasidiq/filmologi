@@ -12,8 +12,11 @@
 </head>
 <body>
 
+@php
+    $bannerImage = "{$imageBaseUrl}/original{$bannerHome[0]['backdrop_path']}";
+@endphp
 
-<section class="bg-center h-[1200px] bg-no-repeat bg-local bg-[url('https://images.unsplash.com/photo-1505954137021-b6bf5a131a7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-gray-700 bg-blend-multiply">
+   <section class="bg-center min-h-[1500px] w-full bg-no-repeat bg-local bg-[url('{{ $bannerImage }}')] bg-gray-700 bg-blend-multiply" >  
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
         <img src="{{ asset('/storage/logo.png') }}" alt="logo" width="300" class="mx-auto ">
         <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Mari bergabung bersama kami dan nikmati fitur fitur menariknya !!.</p>

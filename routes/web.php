@@ -22,9 +22,11 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [MovieController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
  // Films

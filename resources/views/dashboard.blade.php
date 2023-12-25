@@ -71,8 +71,8 @@
             $movieRating = $movieItem['vote_average']*10;
             $movieImage = "{$imageBaseUrl}/w500{$movieItem['poster_path']}";
         @endphp
-            <a href="movies/{{ $movieId }}" class="group block">
-                <div class="w-[280px] h-[500px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[40px] p-6 flex flex-col duration-100 mr-4">
+            <a href="movies/{{ $movieId }}" class="group block text-white">
+                <div class="w-[280px] h-[500px] dark:bg-gray-800 drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[40px] p-6 flex flex-col duration-100 mr-4">
                     <div class="overflow-hidden rounded-[40px]">
                         <img class="w-full h-[350px] rounded-[40px] group-hover:scale-125 duration-200" src="{{ $movieImage }}" alt="Movie Poster"/>
                     </div>
@@ -120,8 +120,8 @@
             $tvRating = $tvItem['vote_average']*10;
             $tvImage = "{$imageBaseUrl}/w500{$tvItem['poster_path']}";
         @endphp
-            <a href="tv/{{ $tvId }}" class="group block">
-                <div class="w-[280px] h-[500px] bg-white drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[40px] p-6 flex flex-col duration-100 mr-4">
+            <a href="tv/{{ $tvId }}" class="group block text-white">
+                <div class="w-[280px] h-[500px] dark:bg-gray-800 drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[40px] p-6 flex flex-col duration-100 mr-4">
                     <div class="overflow-hidden rounded-[40px]">
                         <img class="w-full h-[350px] rounded-[40px] group-hover:scale-125 duration-200" src="{{ $tvImage }}" alt="TV Poster"/>
                     </div>

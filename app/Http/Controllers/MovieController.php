@@ -125,6 +125,9 @@ public function films()
     $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
     $apiKey = env('MOVIE_DB_API_KEY');
     $MAX_MOVIE_ITEM = 5;
+    $soryBy = 'popularity.desc';
+    $page = 1;
+    $minimalVoter = 100;
    
     // Mengakses API untuk mendapatkan film yang sedang tren (trending)
     $bannerMovieResponse = Http::get($baseURL . '/trending/movie/week?api_key=' . $apiKey)->json()['results'];
@@ -144,11 +147,34 @@ public function films()
         }
     }
 
+
+
+    // $movieResponse = Http::get($baseURL . '/discover/movie?api_key=' . $apiKey . '&sort_by=' . $soryBy . 'vote_count.gte' . $minimalVoter . '&page=' . $page )->json()['results'];
+
+    $movieResponse = Http::get($baseURL . '/discover/movie?api_key=' . $apiKey . '&sort_by=' . $soryBy . '&vote_count.gte=' . $minimalVoter . '&page=' . $page )->json()['results'];
+
+    // Persiapkan variabel untuk top movies
+    $movieArray = [];
+
+    // Periksa respons API
+    if ($movieResponse) {
+        // Looping data dari respons API
+        foreach ($movieResponse as $item) {
+            // Tambahkan data ke dalam array
+            array_push($movieArray, $item);
+            
+        }
+    }
+
     return view('films.index', [
         'baseUrl' => $baseURL,
         'imageBaseUrl' => $imageBaseURL,
         'apiKey' => $apiKey,
-        'bannerArrayMovies' => $bannerArrayMovies, // Perubahan disini
+        'bannerArrayMovies' => $bannerArrayMovies, 
+        'movieArray' => $movieArray,
+        'soryBy' => $soryBy,
+        'page' => $page,
+        'minimalVoter' => $minimalVoter,
     ]);
 }
 

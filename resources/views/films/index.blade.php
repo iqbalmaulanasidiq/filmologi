@@ -62,7 +62,7 @@
                 </span>
 
                 <div class="relative">
-                    <select class="block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:focus:shadow-outline-gray" wire:model="sortBy">
+                    <select class="block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:focus:shadow-outline-gray" wire:model="sortBy" >
                         <option value="popularity.desc">Popularity Descending</option>
                         <option value="popularity.asc">Popularity Ascending</option>
                         <option value="release_date.desc">Release Date Descending</option>
@@ -96,7 +96,7 @@
 
         </div>
          {{-- start card --}}
-            <div class="flex flex-wrap items-stretch overflow-hidden -mx-4 mt-4 pt-10">
+            <div class="flex flex-wrap items-stretch overflow-hidden -mx-4 mt-4 pt-10" id="dataWrapper">
                 @foreach ($movieArray as $movieItems)
                     @php
                         $original_date = $movieItems['release_date'];

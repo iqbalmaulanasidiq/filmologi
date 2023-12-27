@@ -33,10 +33,10 @@ Route::get('/films', [MovieController::class, 'films'])
 ->middleware(['auth', 'verified'])
 ->name('films.index');
 
-// TV Shows
-Route::get('/tv-shows', function () {
-    return view('tv-shows.index');
-})->middleware(['auth', 'verified'])->name('tv-shows.index');
+Route::get('/tv-shows', [MovieController::class, 'tvshows'])
+->middleware(['auth', 'verified'])
+->name('tv-shows.index');
+
 
 
 

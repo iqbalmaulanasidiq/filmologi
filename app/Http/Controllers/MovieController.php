@@ -146,12 +146,59 @@ public function films(Request $request)
         $currentItems = $movieArray->slice(($currentPage - 1) * $perPage, $perPage)->all();
         $movieArray = new LengthAwarePaginator($currentItems, $movieArray->count(), $perPage, $currentPage, ['path' => LengthAwarePaginator::resolveCurrentPath()]);
 
+        // Update URL dengan parameter sorting
+        $movieArray->withPath(route('films.index', ['sortBy' => $sortBy]));
+
+
         return view('films.index', [
             'baseUrl' => $baseURL,
             'imageBaseUrl' => $imageBaseURL,
             'apiKey' => $apiKey,
             'bannerArrayMovies' => $bannerArrayMovies,
             'movieArray' => $movieArray,
+            'sortBy' => $sortBy,
+            'page' => $page,
+            'minimalVoter' => $minimalVoter,
+        ]);
+    }
+
+    public function tvshows(Request $request){
+        $baseURL = env('MOVIE_DB_BASE_URL');    
+        $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+        $apiKey = env('MOVIE_DB_API_KEY');
+        $MAX_MOVIE_ITEM = 5;
+        $minimalVoter = 1000;
+
+        // Ambil parameter dari request, jika ada
+        $sortBy = $request->input('sortBy', 'popularity.desc');
+        $page = $request->input('page', 1);
+
+        // Ambil data film untuk banner
+        $bannerTVResponse = Http::get($baseURL . '/trending/tv/week?api_key=' . $apiKey)->json()['results'];
+        $bannerArrayTV = collect($bannerTVResponse)->take($MAX_MOVIE_ITEM);
+
+        // Ambil data film dengan pagination dan sorting
+        // 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc'
+       $TVResponse = Http::get($baseURL . '/discover/tv?api_key=' . $apiKey . '&sort_by=' . $sortBy . '&vote_count.gte=' . $minimalVoter . '&page=' . $page)->json()['results'];
+        $TVArray = collect($TVResponse);
+
+        // Membuat objek LengthAwarePaginator
+        $perPage = 15; // Jumlah item per halaman
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $currentItems = $TVArray->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $TVArray = new LengthAwarePaginator($currentItems, $TVArray->count(), $perPage, $currentPage, ['path' => LengthAwarePaginator::resolveCurrentPath()]);
+
+        // Update URL dengan parameter sorting
+        $TVArray->withPath(route('tv-shows.index', ['sortBy' => $sortBy]));
+
+  
+
+        return view('tv-shows.index', [
+            'baseUrl' => $baseURL,
+            'imageBaseUrl' => $imageBaseURL,
+            'apiKey' => $apiKey,
+            'bannerArrayTV' => $bannerArrayTV,
+            'TVArray' => $TVArray,
             'sortBy' => $sortBy,
             'page' => $page,
             'minimalVoter' => $minimalVoter,

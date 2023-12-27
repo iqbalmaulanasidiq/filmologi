@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +17,7 @@ class UsersSeeder extends Seeder
         $UserData = 
         [
             'name'=>'User',
+            'username' => 'bagas bagus banget',
             'email' => 'user@gmail.com',
             'role' => 'user',
             'password' => bcrypt('123456')
@@ -23,6 +25,7 @@ class UsersSeeder extends Seeder
 
         [
             'name'=>'Admin',
+            'username' => 'bpkadmin',
             'email' => 'admin@gmail.com',
             'role' => 'admin',
             'password' => bcrypt('123456')
@@ -30,6 +33,7 @@ class UsersSeeder extends Seeder
         
         [
             'name'=>'Mba Frontend',
+            'username' => 'frontend',
             'email' => 'frontend@gmail.com',
             'role' => 'frontend',
             'password' => bcrypt('123456')
@@ -37,6 +41,7 @@ class UsersSeeder extends Seeder
         
         [
             'name'=>'Pusing',
+            'username' => 'backend',
             'email' => 'backend@gmail.com',
             'role' => 'backend',
             'password' => bcrypt('123456')
@@ -44,5 +49,9 @@ class UsersSeeder extends Seeder
         
 
         ];
+
+        foreach($UserData as $key => $val) {
+            User::create($val);
+        }
     }
 }

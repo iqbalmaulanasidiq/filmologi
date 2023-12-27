@@ -51,4 +51,5 @@
             </x-primary-button>
         </div>
     </form>
+    <a href="" class="btn btn-dark w-100">Login With Github</a>
 </x-guest-layout>

@@ -1,9 +1,14 @@
 <?php
 
+use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingController;
+use App\Models\User;
+use illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +67,42 @@ Route::get('/dashboard-adm/users/index', function () {
 Route::get('/dashboard-adm/role/index', function () {
     return view('dashboard-adm.role.index');
 })->middleware(['auth', 'verified'])->name('dashboard-adm.role.index');
+
+
+Route::get('/login', function() {
+    return view('login');
+})->name('login');
+
+Route::get('/logout', function() {
+    Auth::logout();
+    return redirect('login');
+})->middleware('auth');
+
+Route::get('/dashboard', function () {
+    return 'anda login sebagai' .auth()->user()->email;
+})->middleware('auth');
+
+Route::get('/auth/github/redirect', function () {
+    return Socialite::driver('github')->redirect();
+});
+
+Route::get('/auth/callback', function () {
+    $githubUser = Socialite::driver('github')->user();
+
+    $user = User::updateOrCreate([
+        'github_id' => $githubUser->id,
+    ], [
+        'name' => $githubUser->nickname,
+        'email' => $githubUser->email,
+        'password' => Hash::make('rahasia'),
+        'github_token' => $githubUser->token,
+        'github_refresh_token' => $githubUser->refreshToken,
+ 
+    ]);
+
+    Auth::login($user);
+ 
+    return redirect('/dashboard');
+});
+
+

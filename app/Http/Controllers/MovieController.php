@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class MovieController extends Controller
 {
@@ -119,64 +120,91 @@ public function dashboard()
 
 
 
-public function films()
-{
-    $baseURL = env('MOVIE_DB_BASE_URL');
-    $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
-    $apiKey = env('MOVIE_DB_API_KEY');
-    $MAX_MOVIE_ITEM = 5;
-    $soryBy = 'popularity.desc';
-    $page = 1;
-    $minimalVoter = 100;
-   
-    // Mengakses API untuk mendapatkan film yang sedang tren (trending)
-    $bannerMovieResponse = Http::get($baseURL . '/trending/movie/week?api_key=' . $apiKey)->json()['results'];
+public function films(Request $request)
+    {
+        $baseURL = env('MOVIE_DB_BASE_URL');
+        $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+        $apiKey = env('MOVIE_DB_API_KEY');
+        $MAX_MOVIE_ITEM = 5;
+        $minimalVoter = 1000;
 
-    // Persiapkan variabel untuk banner film
-    $bannerArrayMovies = [];
+        // Ambil parameter dari request, jika ada
+        $sortBy = $request->input('sortBy', 'popularity.desc');
+        $page = $request->input('page', 1);
 
-    // Periksa respons API
-    if ($bannerMovieResponse) {
-        // Looping data dari respons API
-        foreach ($bannerMovieResponse as $item) {
-            // Tambahkan data ke dalam array
-            array_push($bannerArrayMovies, $item);
-            if (count($bannerArrayMovies) == $MAX_MOVIE_ITEM) {
-                break;
-            }
-        }
+        // Ambil data film untuk banner
+        $bannerMovieResponse = Http::get($baseURL . '/trending/movie/week?api_key=' . $apiKey)->json()['results'];
+        $bannerArrayMovies = collect($bannerMovieResponse)->take($MAX_MOVIE_ITEM);
+
+        // Ambil data film dengan pagination dan sorting
+        $movieResponse = Http::get($baseURL . '/discover/movie?api_key=' . $apiKey . '&sort_by=' . $sortBy . '&vote_count.gte=' . $minimalVoter . '&page=' . $page)->json()['results'];
+        $movieArray = collect($movieResponse);
+
+        // Membuat objek LengthAwarePaginator
+        $perPage = 15; // Jumlah item per halaman
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $currentItems = $movieArray->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $movieArray = new LengthAwarePaginator($currentItems, $movieArray->count(), $perPage, $currentPage, ['path' => LengthAwarePaginator::resolveCurrentPath()]);
+
+        // Update URL dengan parameter sorting
+        $movieArray->withPath(route('films.index', ['sortBy' => $sortBy]));
+
+
+        return view('films.index', [
+            'baseUrl' => $baseURL,
+            'imageBaseUrl' => $imageBaseURL,
+            'apiKey' => $apiKey,
+            'bannerArrayMovies' => $bannerArrayMovies,
+            'movieArray' => $movieArray,
+            'sortBy' => $sortBy,
+            'page' => $page,
+            'minimalVoter' => $minimalVoter,
+        ]);
     }
 
+    public function tvshows(Request $request){
+        $baseURL = env('MOVIE_DB_BASE_URL');    
+        $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+        $apiKey = env('MOVIE_DB_API_KEY');
+        $MAX_MOVIE_ITEM = 5;
+        $minimalVoter = 1000;
 
+        // Ambil parameter dari request, jika ada
+        $sortBy = $request->input('sortBy', 'popularity.desc');
+        $page = $request->input('page', 1);
 
-    // $movieResponse = Http::get($baseURL . '/discover/movie?api_key=' . $apiKey . '&sort_by=' . $soryBy . 'vote_count.gte' . $minimalVoter . '&page=' . $page )->json()['results'];
+        // Ambil data film untuk banner
+        $bannerTVResponse = Http::get($baseURL . '/trending/tv/week?api_key=' . $apiKey)->json()['results'];
+        $bannerArrayTV = collect($bannerTVResponse)->take($MAX_MOVIE_ITEM);
 
-    $movieResponse = Http::get($baseURL . '/discover/movie?api_key=' . $apiKey . '&sort_by=' . $soryBy . '&vote_count.gte=' . $minimalVoter . '&page=' . $page )->json()['results'];
+        // Ambil data film dengan pagination dan sorting
+        // 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc'
+       $TVResponse = Http::get($baseURL . '/discover/tv?api_key=' . $apiKey . '&sort_by=' . $sortBy . '&vote_count.gte=' . $minimalVoter . '&page=' . $page)->json()['results'];
+        $TVArray = collect($TVResponse);
 
-    // Persiapkan variabel untuk top movies
-    $movieArray = [];
+        // Membuat objek LengthAwarePaginator
+        $perPage = 15; // Jumlah item per halaman
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $currentItems = $TVArray->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $TVArray = new LengthAwarePaginator($currentItems, $TVArray->count(), $perPage, $currentPage, ['path' => LengthAwarePaginator::resolveCurrentPath()]);
 
-    // Periksa respons API
-    if ($movieResponse) {
-        // Looping data dari respons API
-        foreach ($movieResponse as $item) {
-            // Tambahkan data ke dalam array
-            array_push($movieArray, $item);
-            
-        }
+        // Update URL dengan parameter sorting
+        $TVArray->withPath(route('tv-shows.index', ['sortBy' => $sortBy]));
+
+  
+
+        return view('tv-shows.index', [
+            'baseUrl' => $baseURL,
+            'imageBaseUrl' => $imageBaseURL,
+            'apiKey' => $apiKey,
+            'bannerArrayTV' => $bannerArrayTV,
+            'TVArray' => $TVArray,
+            'sortBy' => $sortBy,
+            'page' => $page,
+            'minimalVoter' => $minimalVoter,
+        ]);
     }
 
-    return view('films.index', [
-        'baseUrl' => $baseURL,
-        'imageBaseUrl' => $imageBaseURL,
-        'apiKey' => $apiKey,
-        'bannerArrayMovies' => $bannerArrayMovies, 
-        'movieArray' => $movieArray,
-        'soryBy' => $soryBy,
-        'page' => $page,
-        'minimalVoter' => $minimalVoter,
-    ]);
-}
 
 
 }

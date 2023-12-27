@@ -22,15 +22,16 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [MovieController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
- // Films
- Route::get('/films', function () {
-    return view('films.index');
-})->middleware(['auth', 'verified'])->name('films.index');
+Route::get('/films', [MovieController::class, 'films'])
+->middleware(['auth', 'verified'])
+->name('films.index');
 
 // TV Shows
 Route::get('/tv-shows', function () {

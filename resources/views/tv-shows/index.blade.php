@@ -2,6 +2,12 @@
 
 @section('content')
 
+<div class="row">
+    <div class="col-md-6">
+        <form action="/"></form>
+    </div>
+</div>
+
 <div class="dark:bg-gray-900">
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide">

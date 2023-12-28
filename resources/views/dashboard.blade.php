@@ -8,7 +8,7 @@
             @foreach ($bannerArray as $bannerItem)
                 @php
                     $movieTrendingId = $bannerItem['id'];
-                    $bannerImage = "{$imageBaseUrl}/original{$bannerItem['backdrop_path']}";
+                    $bannerImage = "{$imageBaseURL}/original{$bannerItem['backdrop_path']}";
                 @endphp
                 <div class="hidden duration-200 ease-linear" data-carousel-item>
                     <img src="{{ $bannerImage }}" class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
@@ -69,7 +69,7 @@
             $movieId = $movieItem['id'];
             $movietitle = $movieItem['title'];
             $movieRating = $movieItem['vote_average']*10;
-            $movieImage = "{$imageBaseUrl}/w500{$movieItem['poster_path']}";
+            $movieImage = "{$imageBaseURL}/w500{$movieItem['poster_path']}";
         @endphp
             <a href="movies/{{ $movieId }}" class="group block text-white">
                 <div class="w-[280px] h-[500px] dark:bg-gray-800 drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[40px] p-6 flex flex-col duration-100 mr-4">
@@ -118,7 +118,7 @@
             $tvId = $tvItem['id'];
             $tvtitle = $tvItem['name'];
             $tvRating = $tvItem['vote_average']*10;
-            $tvImage = "{$imageBaseUrl}/w500{$tvItem['poster_path']}";
+            $tvImage = "{$imageBaseURL}/w500{$tvItem['poster_path']}";
         @endphp
             <a href="tv/{{ $tvId }}" class="group block text-white">
                 <div class="w-[280px] h-[500px] dark:bg-gray-800 drop-shadow-[0_0px_8px_rgba(0,0,0,0.25)] group-hover:drop-shadow-[0_0px_8px_rgba(0,0,0,0.5)] rounded-[40px] p-6 flex flex-col duration-100 mr-4">

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <title>FILMOLOGI</title>
 
   @vite(['resources/css/app.css','resources/js/app.js'])
@@ -49,7 +49,7 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-        <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+        <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-5 anime-fade-up ">
             
             <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Tentang Kami</h1>
             <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">Selamat datang di FILMOLOGI, platform yang didedikasikan untuk membawa pengalaman sinematik terbaik langsung ke hadapan Anda! Kami adalah penyedia rekomendasi film dan acara televisi yang memahami keunikan setiap pengguna. FILMOLOGI bertujuan untuk memberikan pilihan film dan acara TV yang menarik untuk anda.
@@ -60,28 +60,28 @@
             
         </div>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 anime-slide-in">
                 <a href="#" class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
                         <path d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z"/>
                     </svg>
                     Films
                 </a>
-                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Rekomendasi Film?</h2>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2 ">Rekomendasi Film?</h2>
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">kami dengan senang hati memberikan rekomendasi terkini untuk film-film terbaik dan paling tren setiap minggunya. Jelajahi daftar kami untuk menemukan karya-karya sinematik terbaru yang patut Anda saksikan, lengkap dengan rating yang bisa Anda gunakan sebagai panduan kualitas. Nikmati pengalaman pratinjau yang memikat dengan menyaksikan trailer resmi setiap film. Dengan dukungan ulasan dan penilaian kami, kami berusaha memberikan pandangan holistik untuk membantu Anda membuat pilihan yang tepat dan memuaskan hasrat sinematis Anda.</p>
                 
             </div>
 
             <div class="ps-10">
                 
-            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 anime-scale-in">
                 <a href="#" class="bg-purple-100 text-purple-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"/>
                     </svg>
                     TV Shows
                 </a>
-                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Rekomendasi Film?</h2>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Rekomendasi TV Shows?</h2>
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Dengan antusias memberikan rekomendasi mingguan untuk acara TV terbaik dan paling populer saat ini. Jelajahi daftar kami yang diperbarui setiap minggu untuk menemukan seri-seri terbaru yang wajib Anda saksikan, lengkap dengan peringkat untuk membantu Anda menilai kualitasnya. Saksikan cuplikan eksklusif dari setiap episode melalui trailer resmi, sehingga Anda dapat merasakan atmosfernya sebelum memulai penontonan. Dengan ulasan dan penilaian kami, kami berkomitmen memberikan wawasan komprehensif untuk memandu Anda dalam memilih acara TV yang sesuai dengan preferensi Anda dan membuat pengalaman menonton Anda lebih memuaskan.</p>
                 
 
@@ -95,6 +95,53 @@
 
 
 @include('layouts.footer')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Anime.js animation for elements in the second section
+      anime({
+        targets: '.anime-fade-in',
+        opacity: [0, 1],
+        duration: 2000,
+        easing: 'easeInOutQuad',
+        delay: anime.stagger(100),
+        autoplay: true, // Add this line to ensure the animation starts automatically
+      });
+      // Anime.js animation for elements in the third section
+    anime({
+      targets: '.anime-slide-in',
+      translateX: [-500, 0],
+      opacity: [0, 1],
+      duration: 2000,
+      easing: 'easeInOutQuad',
+      delay: anime.stagger(100),
+      autoplay: true, // Add this line to ensure the animation starts automatically
+    });
 
+    // Anime.js animation for elements in the fourth section
+    anime({
+      targets: '.anime-scale-in',
+      scale: [0, 1],
+      opacity: [0, 1],
+      duration: 2000,
+      easing: 'easeInOutQuad',
+      delay: anime.stagger(100),
+      autoplay: true, // Add this line to ensure the animation starts automatically
+    });
+
+    // Anime.js animation for elements in the fifth section
+    anime({
+      targets: '.anime-fade-up',
+      translateY: [200, 0],
+      opacity: [0, 1],
+      duration: 2000,
+      easing: 'easeInOutQuad',
+      delay: anime.stagger(100),
+      autoplay: true, // Add this line to ensure the animation starts automatically
+    });
+
+    });
+
+    
+  </script>
 </body>
 </html>

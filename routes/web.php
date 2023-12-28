@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TvController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,7 @@ use App\Http\Controllers\SettingController;
 |
 */
 
-Route::get('/', [MovieController::class, 'index'])->name('movies.index');
+Route::get('/', [IndexController::class, 'index'])->name('movies.index');
 
 Route::get('/test', function () {
     return view('test');
@@ -26,14 +29,14 @@ Route::get('/test', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', [MovieController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::get('/films', [MovieController::class, 'films'])
 ->middleware(['auth', 'verified'])
 ->name('films.index');
 
-Route::get('/tv-shows', [MovieController::class, 'tvshows'])
+Route::get('/tv-shows', [TvController::class, 'tvshows'])
 ->middleware(['auth', 'verified'])
 ->name('tv-shows.index');
 

@@ -65,3 +65,9 @@ Route::get('/dashboard-adm/users/index', function () {
 Route::get('/dashboard-adm/role/index', function () {
     return view('dashboard-adm.role.index');
 })->middleware(['auth', 'verified'])->name('dashboard-adm.role.index');
+
+
+// routes/web.php
+Route::get('/movies/{id}', [MovieController::class, 'movieDetails'])->middleware(['auth', 'verified'])->name('films.film_details');
+Route::get('/tv-shows/{id}', [TvController::class, 'TvDetails'])->middleware(['auth', 'verified'])->name('tv-shows.tv_details');
+

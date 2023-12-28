@@ -180,6 +180,8 @@
             window.location.href = '{{ route("films.index") }}?sortBy=' + component.value;
         }
     }
+
+   
 </script>
 
 

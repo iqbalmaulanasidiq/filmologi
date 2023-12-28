@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use Illuminate\Support\Facades\Http;
 
 class MovieController extends Controller
 {
@@ -51,4 +52,29 @@ class MovieController extends Controller
             'minimalVoter' => $minimalVoter,
         ]);
     }
+
+    public function movieDetails($id)
+{
+    $baseURL = env('MOVIE_DB_BASE_URL');
+    $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+    $apiKey = env('MOVIE_DB_API_KEY');
+
+    $response = Http::get("{$baseURL}/movie/{$id}", [
+        'api_key' => $apiKey,
+        'append_to_response' => 'credits,videos,images'
+    ]);
+
+    $movieData = null;
+    if ($response->successful()) {
+        $movieData = $response->json();
+    }
+
+    return view('films.film_details', [
+        'baseURL' => $baseURL,
+        'imageBaseURL' => $imageBaseURL,
+        'apiKey' => $apiKey,
+        'movieData' => $movieData,
+    ]);
+}
+
 }

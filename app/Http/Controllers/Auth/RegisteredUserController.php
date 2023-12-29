@@ -36,6 +36,7 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
         $profileImage = $request->file('profile_image');
@@ -63,6 +64,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'profile_image' => $userProfileImage,
         ]);
+
 
         event(new Registered($user));
 

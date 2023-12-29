@@ -13,10 +13,20 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
+
         @csrf
         @method('patch')
-
+        <div>
+            <x-input-label for="profile_image" :value="__('Profile Image')" />
+            <input id="profile_image" type="file" name="profile_image" accept="image/*" @change="previewImage" />
+            <div class="mt-2">
+                <div class="rounded-full overflow-hidden w-24 h-24 border-2 border-gray-300">
+                    <img id="preview" src="{{ asset('storage/profile_images/' . $user->profile_image) }}" alt="Profile Image Preview" class="w-full h-full object-cover" />
+                </div>
+            </div>
+            <x-input-error class="mt-2" :messages="$errors->get('profile_image')" />
+        </div>
         <div>
             <x-input-label for="name" :value="__('Nama')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
@@ -68,3 +78,21 @@
         </div>
     </form>
 </section>
+@push('scripts')
+<script>
+    function previewImage() {
+        const input = document.getElementById('profile_image');
+        const preview = document.getElementById('preview');
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+@endpush

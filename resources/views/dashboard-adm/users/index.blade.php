@@ -26,11 +26,8 @@
                 </div>
             </li>
             </ol>
-        </nav>
-
-            
-        <div class="flex items-center justify-center h-20 rounded bg-white-50 dark:bg-white-800">           
-        </div>
+        </nav>         
+        <div class="flex items-center justify-center h-20 rounded bg-white-50 dark:bg-white-800"></div>
        </div>
 
        {{-- TULISAN DASHBOARD ADMIN --}}
@@ -38,7 +35,7 @@
           <p class="text-lg font-medium text-gray-500 dark:text-gray-400">Users</p>
        </div>
 
-        <br>
+       
 
         <!-- Modal toggle Tambah -->
             <div class="flex space-x-4"> <!-- Use 'space-x-4' to add horizontal spacing between buttons -->
@@ -242,8 +239,7 @@
                                                                 <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" type="submit" class="block ml-auto text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Edit</button>
                                                         </div>
                                                     </div>
-                                                </div> 
-                                                    
+                                                </div>                                                  
                                                 <button type="submit" class="text-white inline-flex items-center bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Hapus</button>                                                 
                                         </div>
                                         </td>

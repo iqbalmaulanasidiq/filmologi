@@ -20,6 +20,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('movies.index');
+// Route::get('/search', [IndexController::class, 'search'])->name('search');
 
 Route::get('/test', function () {
     return view('test');
@@ -71,3 +72,8 @@ Route::get('/dashboard-adm/role/index', function () {
 Route::get('/movies/{id}', [MovieController::class, 'movieDetails'])->middleware(['auth', 'verified'])->name('films.film_details');
 Route::get('/tv-shows/{id}', [TvController::class, 'TvDetails'])->middleware(['auth', 'verified'])->name('tv-shows.tv_details');
 
+
+Route::get('/films/live-search', [MovieController::class, 'liveSearch'])->name('films.liveSearch');
+
+
+Route::get('/tv-shows/live-search', [TvController::class, 'liveSearch'])->name('tv-shows.liveSearch');

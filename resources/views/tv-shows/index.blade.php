@@ -48,13 +48,31 @@
     </div>
     {{-- end carousel --}}
 
+    <div class="container mx-auto py-12 px-12">
+        <div class="relative w-full">
+                    
+            <!-- livesearch -->
+    <div class="relative w-full mb-4">
+        <input
+            type="text"
+            id="liveSearchInput"
+            class="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300"
+            placeholder="Search for Tv..."
+            oninput="performLiveSearch(this.value)"
+        />
+    </div>
+    <!-- end Livesearch -->
+    
+        </div>
+    </div>
+    
 
 
     {{-- content --}}
 <div class="container mx-auto px-4 py-16">
     
     <!-- Tabs Section -->
-    <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-5 py-5" >
+    <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-5 py-5" id="dataWrapper">
         <div class="flex justify-between items-center mb-4">
             <div class="flex items-center space-x-4">
                 <span class="font-inter font-bold text-xl text-white">
@@ -115,7 +133,7 @@
 
         {{-- pagination --}}
 
-        <div class="container mx-auto py-10">
+        <div class="container mx-auto py-10" id="dataWrapper">
             {{ $TVArray->links() }}
         </div>
 
@@ -147,7 +165,32 @@
             window.location.href = '{{ route("tv-shows.index") }}?sortBy=' + component.value;
         }
     }
+
+    function performLiveSearch(query) {
+            // Jika query kosong, kembalikan hasil halaman awal
+            if (!query.trim()) {
+                window.location.href = '{{ route("tv-shows.index") }}';
+                return;
+            }
+            $.ajax({
+                url: '{{ route("tv-shows.liveSearch") }}',
+                data: { search: query },
+                success: function (data) {
+                    $('#dataWrapper').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error in live search:', error);
+                }
+            });
+        }
+
+        // Attach the input event listener to trigger live search
+        $('#liveSearchInput').on('input', function () {
+            performLiveSearch($(this).val());
+        });
 </script>
+
+
 
 
 

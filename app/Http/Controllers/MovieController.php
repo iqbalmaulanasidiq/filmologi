@@ -76,5 +76,26 @@ class MovieController extends Controller
         'movieData' => $movieData,
     ]);
 }
+public function liveSearch(Request $request)
+    {
+        $baseURL = env('MOVIE_DB_BASE_URL');
+        $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+        $apiKey = env('MOVIE_DB_API_KEY');
 
+        $search = $request->input('search');
+        $response = Http::get("{$baseURL}/search/movie", [
+            'api_key' => $apiKey,
+            'query' => $search,
+        ]);
+
+        $movieData = null;
+        if ($response->successful()) {
+            $movieData = $response->json();
+        }
+
+        return view('films.live_search', [
+            'imageBaseURL' => $imageBaseURL,
+            'movieData' => $movieData,
+        ]);
+    }
 }

@@ -57,4 +57,27 @@ class TvController extends Controller
         'tvData' => $tvData,
     ]);
 }
+
+public function liveSearch(Request $request)
+    {
+        $baseURL = env('MOVIE_DB_BASE_URL');
+        $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+        $apiKey = env('MOVIE_DB_API_KEY');
+
+        $search = $request->input('search');
+        $response = Http::get("{$baseURL}/search/tv", [
+            'api_key' => $apiKey,
+            'query' => $search,
+        ]);
+
+        $TvData = null;
+        if ($response->successful()) {
+            $TvData = $response->json();
+        }
+
+        return view('tv-shows.live_search', [
+            'imageBaseURL' => $imageBaseURL,
+            'TvData' => $TvData,
+        ]);
+    }
 }

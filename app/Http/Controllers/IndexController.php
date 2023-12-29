@@ -38,4 +38,24 @@ class IndexController extends Controller
             'bannerHome' => $bannerHome,
         ]);
     }
+
+    public function search(Request $request)
+{
+    $baseURL = env('MOVIE_DB_BASE_URL');
+    $apiKey = env('MOVIE_DB_API_KEY');
+    $searchQuery = $request->input('query');
+
+    // Hit API untuk melakukan pencarian
+    $searchResponse = Http::get("{$baseURL}/search/multi", [
+        'api_key' => $apiKey,
+        'query' => $searchQuery,
+    ])->json()['results'];
+
+    return view('search', [
+        'baseUrl' => $baseURL,
+        'apiKey' => $apiKey,
+        'searchResults' => $searchResponse,
+    ]);
+}
+
 }

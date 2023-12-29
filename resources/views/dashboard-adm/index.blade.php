@@ -1,24 +1,31 @@
 @extends('dashboard-adm.layouts.main')
 
 @section('content')
+<section class="bg-white dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
 
-<div class="p-10 sm:ml-64 bg-slate-900">
+   </div>
+   <div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
+</section>
+
+
+<div class="p-10 sm:ml-64 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] bg-slate-900">
     <div class="p-4 mt-14 ">
        <div class="grid grid-cols-3 gap-4 mb-4">
 
-        {{-- BREADCRUMB --}}
-        <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <li class="inline-flex items-center">
-                <a href="/dashboard-adm" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white-800">
-                  <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                     <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
-                  </svg>
-                  Dashboard Admin
-                </a>
-            </li>
-            </ol>           
-        </nav>       
+         {{-- BREADCRUMB --}}
+         <nav class="flex" aria-label="Breadcrumb">
+               <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+               <li class="inline-flex items-center">
+                  <a href="/dashboard-adm" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white-800">
+                     <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                     </svg>
+                     Dashboard Admin
+                  </a>
+               </li>
+               </ol>           
+         </nav>       
       </div>
 
        
@@ -42,7 +49,7 @@
                <h5 class="mb-2 text-6xl font-bold tracking-tight text-white">5</h5>
             </a>
 
-            <a href="#" class="block max-w-sm p-6 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl rounded-lg focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 shadow hover:bg-blue-100 active:bg-blue-800 dark:bg-blue-800 dark:border-blue-300 dark:hover:bg-blue-800">            
+            <a href="#" class="block max-w-xl p-6 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl rounded-lg focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 shadow hover:bg-blue-100 active:bg-blue-800 dark:bg-blue-800 dark:border-blue-300 dark:hover:bg-blue-800">            
                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Total Rating</h5>
                <h5 class="mb-2 text-6xl font-bold tracking-tight text-white">30</h5>             
             </a>

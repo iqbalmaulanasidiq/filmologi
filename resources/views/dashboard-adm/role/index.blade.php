@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="p-10 sm:ml-64 bg-slate-900">
+<div class="p-10 sm:ml-64 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] bg-gradient-to-b from-blue-400 to-transparent dark:from-blue-900">
     <div class="p-4 mt-20">
        <div class="grid grid-cols-3 gap-4 mb-4">
 

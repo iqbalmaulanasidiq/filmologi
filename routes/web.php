@@ -57,15 +57,15 @@ require __DIR__.'/auth.php';
 // DASHBOARD ADMIN
 Route::get('/dashboard-adm', function () {
     return view('dashboard-adm.index');
-})->middleware(['auth', 'verified'])->name('admin');
+})->middleware(['auth', 'verified', 'admin'])->name('admin');
 
 Route::get('/dashboard-adm/users/index', function () {
     return view('dashboard-adm.users.index');
-})->middleware(['auth', 'verified'])->name('dashboard-adm.users.index');
+})->middleware(['auth', 'verified', 'admin'])->name('dashboard-adm.users.index');
 
 Route::get('/dashboard-adm/role/index', function () {
     return view('dashboard-adm.role.index');
-})->middleware(['auth', 'verified'])->name('dashboard-adm.role.index');
+})->middleware(['auth', 'verified', 'admin'])->name('dashboard-adm.role.index');
 
 
 // routes/web.php
@@ -77,3 +77,7 @@ Route::get('/films/live-search', [MovieController::class, 'liveSearch'])->name('
 
 
 Route::get('/tv-shows/live-search', [TvController::class, 'liveSearch'])->name('tv-shows.liveSearch');
+
+Route::get('admin', function () {
+    return 'Admin Page';
+})->middleware('auth', 'admin');

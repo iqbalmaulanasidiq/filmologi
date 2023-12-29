@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TvController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\GithubController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DashboardController;
@@ -81,3 +82,7 @@ Route::get('/tv-shows/live-search', [TvController::class, 'liveSearch'])->name('
 Route::get('admin', function () {
     return 'Admin Page';
 })->middleware('auth', 'admin');
+
+// route github
+Route::get('auth/github', [GithubController::class, 'redirect'])->name('github.login');
+Route::get('auth/github/callback', [GithubController::class, 'callback'])->name('github.callback');

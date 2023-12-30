@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
 
-     const ROLE_USER = 'user';
+    const ROLE_USER = 'user';
     const ROLE_ADMIN = 'admin';
 
     protected $fillable = [
@@ -26,6 +26,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'role',
         'profile_image',
         'github_id',
         'auth_type',

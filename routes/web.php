@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\UserAdm;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardAdm;
 use App\Http\Controllers\TvController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
@@ -55,18 +57,26 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// DASHBOARD ADMIN
-Route::get('/dashboard-adm', function () {
-    return view('dashboard-adm.index');
-})->middleware(['auth', 'verified', 'admin'])->name('admin');
 
-Route::get('/dashboard-adm/users/index', function () {
-    return view('dashboard-adm.users.index');
-})->middleware(['auth', 'verified', 'admin'])->name('dashboard-adm.users.index');
 
-Route::get('/dashboard-adm/role/index', function () {
-    return view('dashboard-adm.role.index');
-})->middleware(['auth', 'verified', 'admin'])->name('dashboard-adm.role.index');
+Route::get('/dashboard-adm', [DashboardAdm::class, 'index'])->middleware(['auth', 'verified', 'admin'])->name('dashboard-adm');
+
+// Route::get('/dashboard-adm/users/index', function () {
+//     return view('dashboard-adm.users.index');
+// })->middleware(['auth', 'verified', 'admin'])->name('dashboard-adm.users.index');
+
+use App\Http\Controllers\UserAdmController;
+
+Route::prefix('dashboard-adm')->group(function () {
+    Route::get('/users', [UserAdm::class, 'index'])->name('dashboard-adm.users.index');
+    Route::post('/users', [UserAdm::class, 'store'])->name('dashboard-adm.users.store');
+    Route::put('/users/{id}', [UserAdm::class, 'update'])->name('dashboard-adm.users.update');
+    Route::delete('/users/{id}', [UserAdm::class, 'destroy'])->name('dashboard-adm.users.destroy');
+});
+
+// Add other routes if needed
+
+
 
 
 // routes/web.php

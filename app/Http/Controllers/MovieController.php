@@ -98,4 +98,5 @@ public function liveSearch(Request $request)
             'movieData' => $movieData,
         ]);
     }
+
 }

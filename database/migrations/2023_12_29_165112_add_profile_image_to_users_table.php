@@ -12,6 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->text('profile_image')->nullable();
             $table->string('github_id')->nullable();
             $table->string('auth_type')->nullable();
         });

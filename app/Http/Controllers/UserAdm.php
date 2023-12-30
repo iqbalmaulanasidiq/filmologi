@@ -13,6 +13,11 @@ class UserAdm extends Controller
         $users = User::all();
         return view('dashboard-adm.users.index', compact('users'));
     }
+    public function dataUser()
+    {
+        $users = User::all();
+        return view('dashboard-adm.users.PDF', compact('users'));
+    }
 
     public function store(Request $request)
 {

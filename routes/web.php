@@ -10,6 +10,7 @@ use App\Http\Controllers\GithubController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,3 +97,6 @@ Route::get('admin', function () {
 // route github
 Route::get('auth/github', [GithubController::class, 'redirect'])->name('github.login');
 Route::get('auth/github/callback', [GithubController::class, 'callback'])->name('github.callback');
+
+// export pdf
+Route::get('dashboard-adm/users/PDF', [UserAdm::class, 'dataUser'])->name('users.PDF');

@@ -31,18 +31,20 @@
         <div class="flex items-center justify-center h-20 rounded bg-white-50 dark:bg-white-800"></div>
        </div>
 
-       {{-- TULISAN DASHBOARD ADMIN --}}
        <div class="flex items-center justify-between mb-4">
         <h1 class="text-2xl font-bold text-white">Users</h1>
-        <div class="flex space-x-4">
-            <button data-modal-target="add-modal" data-modal-toggle="add-modal"
-                    class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Tambah Pengguna
-            </button>
-            <button id="export-pdf"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"> <a href="{{ route }}"> Export to PDF</a>
+    
+        <div class="space-x-2">
+            <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Tambah Pengguna</button>
+    
+            <!-- Tombol Export PDF -->
+            <button id="export-pdf" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                <a href="{{ route('users.PDF') }}" target="_blank">Export to PDF</a>
             </button>
         </div>
     </div>
+    
+    
 
     
     <!-- Add modal -->
@@ -277,37 +279,27 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
-
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const modalButtons = document.querySelectorAll('[data-modal-toggle]');
-        modalButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const targetModalId = this.getAttribute('data-modal-target');
-                const targetModal = document.getElementById(targetModalId);
+    // Add this script at the end of your Blade file or in a separate JS file.
 
-                // Toggle modal visibility
-                targetModal.classList.toggle('hidden');
-            });
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    const modalButtons = document.querySelectorAll('[data-modal-toggle]');
+    modalButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const targetModalId = this.getAttribute('data-modal-target');
+            const targetModal = document.getElementById(targetModalId);
 
-        const exportButton = document.getElementById('export-pdf');
-
-        exportButton.addEventListener('click', function () {
-            // Initialize jsPDF
-            const pdf = new jsPDF();
-
-            // Add content to the PDF
-            pdf.text('User Data', 10, 10);
-            pdf.autoTable({ html: '#user-table' }); // Replace 'user-table' with the actual ID of your table
-
-            // Save the PDF
-            pdf.save('user_data.pdf');
+            // Toggle modal visibility
+            targetModal.classList.toggle('hidden');
         });
     });
+
+    // Add similar logic for form submission.
+});
+
+
+
 </script>
-
-
 
 
 

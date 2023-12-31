@@ -68,12 +68,14 @@ Route::get('/dashboard-adm', [DashboardAdm::class, 'index'])->middleware(['auth'
 
 use App\Http\Controllers\UserAdmController;
 
-Route::prefix('dashboard-adm')->group(function () {
+Route::prefix('dashboard-adm')->middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/users', [UserAdm::class, 'index'])->name('dashboard-adm.users.index');
     Route::post('/users', [UserAdm::class, 'store'])->name('dashboard-adm.users.store');
     Route::put('/users/{id}', [UserAdm::class, 'update'])->name('dashboard-adm.users.update');
     Route::delete('/users/{id}', [UserAdm::class, 'destroy'])->name('dashboard-adm.users.destroy');
+    Route::get('/users/PDF', [UserAdm::class, 'dataUser'])->name('users.PDF');
 });
+
 
 // Add other routes if needed
 

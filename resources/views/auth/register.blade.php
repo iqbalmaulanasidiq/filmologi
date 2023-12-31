@@ -1,5 +1,10 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <div class="text-center">
+        <a href="{{ route('github.login') }}">
+            <img src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" alt="Github Icon" width="50px" class="mx-auto scale-100 hover:scale-125 ease-in duration-200">
+        </a>
+    </div>
+    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data"> 
         @csrf
 
         <!-- Name -->
@@ -46,6 +51,14 @@
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
+
+        <!-- Profile Image Upload -->
+        <div class="mt-4">
+            <x-input-label for="profile_image" :value="__('Gambar Profil')" />
+            <input id="profile_image" type="file" name="profile_image" accept="image/*" />
+            <x-input-error :messages="$errors->get('profile_image')" class="mt-2" />
+        </div>
+
 
         <div class="flex items-center justify-end mt-4">
             <a class="no-underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tv;
-
+use Illuminate\Support\Facades\Http;
 class TvController extends Controller
 {
     public function tvshows(Request $request)
@@ -31,6 +31,53 @@ class TvController extends Controller
             'sortBy' => $sortBy,
             'page' => $page,
             'minimalVoter' => $minimalVoter,
+        ]);
+    }
+
+    public function TvDetails($id)
+{
+    $baseURL = env('MOVIE_DB_BASE_URL');
+    $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+    $apiKey = env('MOVIE_DB_API_KEY');
+
+    $response = Http::get("{$baseURL}/tv/{$id}", [
+        'api_key' => $apiKey,
+        'append_to_response' => 'credits,videos,images'
+    ]);
+
+    $tvData = null;
+    if ($response->successful()) {
+        $tvData = $response->json();
+    }
+
+    return view('tv-shows.tv_details', [
+        'baseURL' => $baseURL,
+        'imageBaseURL' => $imageBaseURL,
+        'apiKey' => $apiKey,
+        'tvData' => $tvData,
+    ]);
+}
+
+public function liveSearch(Request $request)
+    {
+        $baseURL = env('MOVIE_DB_BASE_URL');
+        $imageBaseURL = env('MOVIE_DB_IMAGE_BASE_URL');
+        $apiKey = env('MOVIE_DB_API_KEY');
+
+        $search = $request->input('search');
+        $response = Http::get("{$baseURL}/search/tv", [
+            'api_key' => $apiKey,
+            'query' => $search,
+        ]);
+
+        $TvData = null;
+        if ($response->successful()) {
+            $TvData = $response->json();
+        }
+
+        return view('tv-shows.live_search', [
+            'imageBaseURL' => $imageBaseURL,
+            'TvData' => $TvData,
         ]);
     }
 }

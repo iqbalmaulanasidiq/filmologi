@@ -21,6 +21,7 @@
 
 
 
+@include('components.gotoTop')
 @include('layouts.footer')
 
 

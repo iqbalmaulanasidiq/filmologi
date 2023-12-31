@@ -56,4 +56,6 @@ class Movie
 
         return $bannerHome;
     }
+
+
 }

@@ -23,6 +23,7 @@ class DashboardController extends Controller
         $bannerArray = Dashboard::getBannerData($baseURL, $apiKey, $maxBanner, $imageBaseURL);
         $topMovieArray = Dashboard::getTopMovies($baseURL, $apiKey, $maxMovieItem, $imageBaseURL);
         $topTvArray = Dashboard::getTopTv($baseURL, $apiKey, $maxTvItem, $imageBaseURL);
+        $bannerHome = Dashboard::getTopMoviesHome($baseURL, $apiKey, $imageBaseURL);
 
         // Pass data to the view
         return view('dashboard', [

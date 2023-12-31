@@ -23,6 +23,12 @@
                     <x-nav-link :href="route('tv-shows.index')" :active="request()->routeIs('tv-shows.index')">
                         {{ __('TV Show') }}
                     </x-nav-link>
+                    {{-- <x-nav-link :href="route('search')" :active="request()->routeIs('search')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white font-bold" viewBox="0 0 20 20" fill="currentColor" stroke-width="2">
+                            <path fill-rule="evenodd" d="M14.854 13.146a8 8 0 1 0-1.415 1.415l5.707 5.707a1 1 0 0 0 1.414-1.415l-5.707-5.707zM15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" clip-rule="evenodd" />
+                        </svg>
+                                                                       
+                    </x-nav-link> --}}
                 </div>
             </div>
 
@@ -86,6 +92,12 @@
             <x-responsive-nav-link :href="route('tv-shows.index')" :active="request()->routeIs('tv-shows.index')">
                 {{ __('TV Show') }}
             </x-responsive-nav-link>
+            {{-- <x-responsive-nav-link :href="route('search')" :active="request()->routeIs('search')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white font-bold" viewBox="0 0 20 20" fill="currentColor" stroke-width="2">
+                    <path fill-rule="evenodd" d="M14.854 13.146a8 8 0 1 0-1.415 1.415l5.707 5.707a1 1 0 0 0 1.414-1.415l-5.707-5.707zM15 8a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" clip-rule="evenodd" />
+                </svg>
+                
+            </x-responsive-nav-link> --}}
         </div>
 
         <!-- Responsive Settings Options -->
